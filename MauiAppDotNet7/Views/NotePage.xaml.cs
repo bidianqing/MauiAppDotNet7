@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace MauiAppDotNet7.Views;
 
 public partial class NotePage : ContentPage
@@ -10,6 +12,18 @@ public partial class NotePage : ContentPage
 
         if (File.Exists(_fileName))
             TextEditor.Text = File.ReadAllText(_fileName);
+    }
+
+    protected override void OnAppearing()
+    {
+        Trace.WriteLine("Ö´ÐÐOnAppearing");
+        base.OnAppearing();
+    }
+
+    protected override void OnDisappearing()
+    {
+        Trace.WriteLine("Ö´ÐÐOnAppearing");
+        base.OnDisappearing();
     }
 
     private void SaveButton_Clicked(object sender, EventArgs e)
